@@ -1,0 +1,24 @@
+<form class="date-form">
+  <mat-form-field [formGroup]="addDay">
+    <input matInput [matDatepicker]="add_date" placeholder="Choose a date" [(ngModel)]="technology.date"
+           formControlName="dayTechs">
+    <mat-datepicker-toggle matSuffix [for]="add_date"></mat-datepicker-toggle>
+    <mat-datepicker #add_date></mat-datepicker>
+  </mat-form-field>
+</form>
+
+<app-add-technolog (addTechnolog)="addTehnology($event)"></app-add-technolog>
+
+<div class="button-row">
+  <button mat-raised-button color="primary" (click)="addNewTechnologDay()" [disabled]="(!addDay.valid) || (count!==100)">Send Form</button>
+</div>
+
+<div class="count-info" *ngIf="count < 100">Summ of the technology persent must be 100%. <br> Now is {{count}}%</div>
+<div class="count-error" *ngIf="count > 100">ERROR!!! Summ of the technology persent must be equal 100%. <br> Now is {{count}}% Please Restart Form</div><br>
+
+<div class="list-technology">
+  <div class="list-technology__item" *ngFor="let tech of technology.technologys">
+    {{tech.name}} = {{tech.percent}}%
+  </div>
+</div>
+

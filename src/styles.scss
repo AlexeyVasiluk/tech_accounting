@@ -1,1 +1,67 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.color0 {
+  background: red;
+}
+
+.color1 {
+  background: yellow;
+}
+
+.color2 {
+  background: #37ff42;
+}
+
+.color3 {
+  background: #2f34ff;
+}
+
+.color4 {
+  background: #8a1cff;
+}
+
+.color5 {
+  background: brown;
+}
+
+.bar {
+  height: 20px;
+  float: left;
+}
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  .result-wrapper__one-day {
+    margin-bottom: 15px;
+  }
+  span {
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+  }
+}
+
+.count-ok{
+  color: green;
+}
+
+.count-info {
+  color: blue;
+  font-style: italic;
+}
+
+.count-error {
+  color: red;
+  text-transform: uppercase;
+}
+
+.button-row {
+  margin-bottom: 15px;
+}
+
+.graph{
+  display: inline-block;
+}

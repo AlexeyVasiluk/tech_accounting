@@ -1,0 +1,24 @@
+<h2 class="add-technologies__title">Add Technologies Form</h2>
+
+<button class="open-form-button" mat-raised-button color="accent" (click)="addButton=!addButton">
+  <span *ngIf="!addButton">+ OPEN FORM</span>
+  <span *ngIf="addButton">RESTART FORM</span>
+</button>
+<hr>
+
+<div *ngIf="addButton">
+  <app-add-day-technology (addTechnologDay)="addDayTechnologiToStatistic($event)"></app-add-day-technology>
+</div>
+<hr>
+
+<div class="result-wrapper">
+  <div class="result-wrapper__one-day" *ngFor="let item of statics.technologyPerDay">
+    {{item.date | date:'short'}}
+    <span *ngFor="let tech of item.technologys">
+      {{tech.name}} = {{tech.percent}}%
+    </span>
+    <div class="graph" *ngFor="let tech of item.technologys; let i = index">
+      <div [style.width]="tech.percent+'px'" class="color{{i}} bar"></div>
+    </div>
+  </div>
+</div>

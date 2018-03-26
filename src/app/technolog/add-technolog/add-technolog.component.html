@@ -1,0 +1,18 @@
+<div class="add-technologies__wrapper">
+  <div class="add-technologies__block">
+    <form [formGroup]="addForm">
+      <label for="name">Technology Name</label>
+      <mat-form-field>
+        <input type="text" id="name" matInput class="add-technologies__name" formControlName="name">
+      </mat-form-field>
+      <br>
+      <label for="percent">Percentage of Use</label>
+      <mat-form-field>
+        <input type="number" id="percent" matInput class="add-technologies__percent" formControlName="percent">
+      </mat-form-field>
+    </form>
+    <div class="button-row">
+      <button mat-raised-button color="primary" disabled="{{!addForm.valid}}" (click)="addTechnologies()">Add Technology</button>
+    </div>
+  </div>
+</div>
